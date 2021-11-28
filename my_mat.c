@@ -30,7 +30,7 @@ void function2(int i, int j)
         {
             for(int k = 0; k < 10; k++)
             {
-                if(mat[m][k] == 0)
+                if(mat[m][k] == 0 && m != k)
                 {
                     mat[m][k] = mat[m][n] + mat[n][k];
                 }
