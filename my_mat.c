@@ -63,11 +63,11 @@ void function2(int i, int j)
 {
     if(mat[i][j] != 0)
     {
-        printf("True");
+        printf("True\n");
     }
     else
     {
-        printf("False");
+        printf("False\n");
     }
 }
 
@@ -75,11 +75,11 @@ void function3(int i, int j)
 {
     if(mat[i][j] != 0)
     {
-        printf("%d", mat[i][j]);
+        printf("%d\n", mat[i][j]);
     }
     else
     {
-        printf("-1");
+        printf("-1\n");
     }
 }
 
