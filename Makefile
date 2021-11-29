@@ -5,7 +5,7 @@ my_mat.o : my_mat.c my_mat.h
 .PHONY : clean
 clean:
 	rm *.o *.a connections
-libmy_mat.a : my_mat.o
+libmy_mat.a : my_mat.o my_mat.h
 	ar rcu libmy_mat.a my_mat.o
 connections: main.o libmy_mat.a
 	gcc -Wall main.o ./libmy_mat.a -o connections
