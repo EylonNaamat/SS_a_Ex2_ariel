@@ -30,9 +30,13 @@ void shortestPath()
             for(int j = 0; j < 10; j++)
             {
                 int temp = 0;
-                if(mat[i][k] == __INT_MAX__|| mat[k][j] == __INT_MAX__)
+                if(mat[i][k] == __INT_MAX__ || mat[k][j] == __INT_MAX__)
                 {
                     temp = __INT_MAX__;
+                }
+                else
+                {
+                    temp = mat[i][k] + mat[k][j];
                 }
                 mat[i][j] = min(mat[i][j], temp);
             }
@@ -42,7 +46,7 @@ void shortestPath()
     {
         for(int j = 0; j < 10; j++)
         {
-            if(mat[i][j] >= (__INT_MAX__)/2)
+            if(mat[i][j] >= (__INT_MAX__))
             {
                 mat[i][j] = 0;
             }
