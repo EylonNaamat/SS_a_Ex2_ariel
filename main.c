@@ -25,5 +25,6 @@ int main()
             function3(i,j);
         }
         scanf("%c", &c);
+        
     }
 }
