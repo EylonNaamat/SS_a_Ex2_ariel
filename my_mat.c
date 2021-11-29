@@ -12,28 +12,35 @@ int min(int a, int b)
 
 void shortestPath()
 {
-     for(int n = 0; n < 10; n++)
+    for(int i = 0; i < 10; i++)
     {
-        for (int m = 0; m < 10; m++)
+        for(int j = 0; j < 10; j++)
         {
-            for (int k = 0; k < 10; k++)
+            if(i != j && mat[i][j] == 0)
             {
-                if((m == k) && (mat[m][k] == 0))
-                {
-                    mat[m][k] = 0;
-                }
-                else
-                {
-                    if(mat[m][k] == 0)
-                    {
-                        mat[m][k] =  mat[m][n] + mat[n][k];
-                    }
-                    else
-                    {
-                        int temp = mat[m][n] + mat[n][k];    
-                        mat[m][k] = min(mat[m][k], temp);
-                    }
-                }
+                mat[i][j] = (__INT_MAX__)/2;
+            }
+        }
+    }
+
+    for(int k = 0; k < 10; k++)
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            for(int j = 0; j < 10; j++)
+            {
+                int temp = mat[i][k] + mat[k][j];
+                mat[i][j] = min(mat[i][j], temp);
+            }
+        }
+    }
+    for(int i = 0; i < 10; i++)
+    {
+        for(int j = 0; j < 10; j++)
+        {
+            if(mat[i][j] >= (__INT_MAX__)/2)
+            {
+                mat[i][j] = 0;
             }
         }
     }
